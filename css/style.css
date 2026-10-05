@@ -1,0 +1,171 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+}
+
+/* Variables */
+:root {
+  --font-size-sm: clamp(0.8rem, 0.25vi + 0.74rem, 0.94rem);
+  --font-size-base: clamp(1rem, 0.45vi + 0.89rem, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 0.76vi + 1.06rem, 1.67rem);
+  --font-size-xl: clamp(1.56rem, 1.2vi + 1.26rem, 2.22rem);
+  --font-size-2xl: clamp(1.95rem, 1.83vi + 1.5rem, 2.96rem);
+  --font-size-3xl: clamp(2.44rem, 2.74vi + 1.76rem, 3.95rem);
+  --font-size-4xl: clamp(3.05rem, 4.02vi + 2.05rem, 5.26rem);
+
+  --font-size-vis-sm: 12px;
+  --font-size-vis-base: 14px;
+  --font-size-vis-lg: 16px;
+  --font-size-vis-xl: 20px;
+
+  --font-family: "Google Sans Flex", sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --line-height-body: 1.5;
+  --line-height-header: 0.9;
+
+  --color-background: #d9d4ce;
+  --color-text: #1a233b;
+  --color-accent: #df703c;
+}
+
+/* Typography */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-variation-settings: "wdth" 87.5;
+}
+
+hgroup {
+  width: fit-content;
+}
+
+h1 {
+  color: var(--color-accent);
+  font-size: 72px;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-header);
+  font-variation-settings: "wdth" 50;
+}
+
+hgroup p {
+  font-size: 24.5px;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-header);
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: 0.1em;
+}
+
+footer {
+  font-size: var(--font-size-sm);
+}
+
+/* Layout */
+main {
+  margin-inline: auto;
+  padding-block: 4rem;
+  min-height: 100svh;
+  width: min(80rem, 100% - 2rem);
+}
+
+article > * + * {
+  margin-block-start: 2rem;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2rem 6rem;
+}
+
+/* Legend */
+.legend {
+  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  align-items: center;
+  font-size: var(--font-size-vis-base);
+  line-height: 0.71;
+  gap: 6px;
+}
+
+.legend__title {
+  grid-column: span 2;
+  font-size: var(--font-size-vis-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.legend__title span {
+  font-size: var(--font-size-vis-base);
+  font-weight: var(--font-weight-normal);
+}
+
+.legend__swatch {
+  background-color: var(--color-accent);
+  width: 64px;
+  height: 16px;
+}
+
+/* Timeline */
+.timeline text {
+  font-size: var(--font-size-vis-base);
+  fill: currentColor;
+}
+
+.timeline .axis {
+  font-family: inherit;
+}
+
+.timeline .axis line {
+  stroke: var(--color-background);
+  stroke-width: 2px;
+}
+
+.timeline .event {
+  stroke: var(--color-accent);
+}
+
+.timeline .name-label__title {
+  font-size: var(--font-size-vis-lg);
+  font-weight: var(--font-weight-bold);
+}
